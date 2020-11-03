@@ -2,7 +2,7 @@ mod lexer;
 mod filereader;
 mod parser;
 mod filewriter;
-mod compiler;
+mod generator;
 
 #[allow(dead_code)]
 fn prison_to_json() {

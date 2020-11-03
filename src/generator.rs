@@ -1,14 +1,14 @@
 extern crate json;
 
-struct Compiler {
+struct Generator {
     prison_json: json::JsonValue,
     cursor: usize
 }
 
 // Static 
-impl Compiler {
-    fn new(prison_json: json::JsonValue) -> Compiler {
-        Compiler {
+impl Generator {
+    fn new(prison_json: json::JsonValue) -> Generator {
+        Generator {
             prison_json,
             cursor: 0
         }
@@ -16,7 +16,7 @@ impl Compiler {
 }
 
 // Instance
-impl Compiler {
+impl Generator {
     fn compile(&mut self) -> Vec<String> {
         let mut tokens = Vec::<String>::new();
         
