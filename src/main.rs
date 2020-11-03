@@ -9,10 +9,10 @@ use clap::{App, Arg};
 use json;
 
 fn main() {
-    let matches = App::new("Prison Architect savefile to json Parser")
-       .version("1.0.0")
+    let matches = App::new("prison_to_json")
+       .version("v1.0.0")
        .about("Can parse Prison Architect savefiles to json and back.")
-       .author("Christian Schweigel")
+       .author("Created by: Christian Schweigel")
        .arg(Arg::with_name("INPUTFILE")
                                .help("Input file, can be PA savefile or json")
                                .required(true)
