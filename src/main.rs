@@ -19,7 +19,7 @@ fn prison_to_json() -> json::JsonValue {
 #[allow(dead_code)]
 fn json_to_prison(obj: json::JsonValue) {
     let mut gen = generator::Generator::new(obj);
-    let tokens = gen.generate_prison();
+    let tokens = gen.generate_prison().unwrap();
     let writer = filewriter::FileWriter::new(String::from("output.prison"));
     writer.write_or_update(tokens.join(""));
 }
