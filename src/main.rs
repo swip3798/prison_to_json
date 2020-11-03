@@ -10,7 +10,7 @@ use json;
 
 fn main() {
     let matches = App::new("Prison Architect savefile to json Parser")
-       .version("1.0")
+       .version("1.0.0")
        .about("Can parse Prison Architect savefiles to json and back.")
        .author("Christian Schweigel")
        .arg(Arg::with_name("INPUTFILE")
