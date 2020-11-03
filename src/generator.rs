@@ -67,6 +67,7 @@ impl Generator {
                         tokens.append(&mut Generator::generate_pair(element.0, member.as_str().unwrap().to_string()));
                     } else if member.is_object() {
                         tokens.append(&mut Generator::generate_obj(element.0, member, indent + 1)?);
+                        tokens.push(String::from("\n"));
                     } else {
                         return Err(Error::UnexpectedTypeInArray);
                     }
