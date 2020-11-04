@@ -15,14 +15,15 @@ impl FileWriter {
 
 impl FileWriter {
     #[allow(dead_code)]
-    pub fn write_or_update(&self, content: String) {
+    pub fn write_or_update(&self, content: String) -> bool {
         match File::create(self.path.clone()) {
             Ok(mut file) => {
                 match file.write_all(content.as_bytes()) {
-                    _ => return ()
+                    Ok(_) => return true,
+                    _ => return false
                 }
             },
-            _ => return ()
+            _ => return false
         }
         //file.write_all(b"Hello, world!")?;
     }
