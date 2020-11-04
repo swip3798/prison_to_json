@@ -24,18 +24,15 @@ impl Parser {
     fn consume(&mut self) -> String {
         let consumed = self.tokens.get(self.cursor).unwrap();
         self.cursor += 1;
-        //println!("Consumed: {}", consumed);
         return consumed.clone();
     }
 
     fn expect_obj(&mut self) ->json::JsonValue {
         let mut prison = json::JsonValue::new_object();
         while self.look_ahead(0) != "END" {
-            //println!("{}", self.look_ahead(0));
             if self.look_ahead(0) == "BEGIN" {
                 self.consume();
                 let key = self.consume();
-                //println!("Enter new obj, name: {}", key);
                 let value = self.expect_obj();
                 if prison.has_key(key.as_str()) {
                     if prison[key.as_str()].is_array() {
@@ -61,7 +58,6 @@ impl Parser {
             }
         }
         self.consume();
-        //println!("Exit object");
         return prison;
     }
 
