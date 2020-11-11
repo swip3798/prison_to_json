@@ -20,6 +20,8 @@ jobs:
       run: cargo build --release --verbose
     - name: Run tests
       run: cargo test --verbose
+    - name: Check dir
+      run: ls -la
     - uses: actions/upload-artifact@v2
       with:
        name: UbuntuBuild
@@ -34,8 +36,6 @@ jobs:
      run: cargo build --release --verbose
    - name: Run tests
      run: cargo test --verbose
-   - name: Echo folders
-     run: tree
    - uses: actions/upload-artifact@v2
      with:
       name: WindowsBuild
