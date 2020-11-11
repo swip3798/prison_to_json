@@ -35,4 +35,4 @@ jobs:
    - uses: actions/upload-artifact@v2
      with:
       name: WindowsBuild
-      path: target/release/emulator.exe
+      path: target/release/prison_to_json.exe
