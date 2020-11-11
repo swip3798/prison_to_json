@@ -21,7 +21,7 @@ jobs:
     - name: Run tests
       run: cargo test --verbose
     - name: Check dir
-      run: ls -la
+      run: ls target/release -la
     - uses: actions/upload-artifact@v2
       with:
        name: UbuntuBuild
