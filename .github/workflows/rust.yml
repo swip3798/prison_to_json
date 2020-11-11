@@ -30,6 +30,8 @@ jobs:
      run: cargo build --release --verbose
    - name: Run tests
      run: cargo test --verbose
+   - name: Echo folders
+     run: dir
    - uses: actions/upload-artifact@v2
      with:
       name: WindowsBuild
