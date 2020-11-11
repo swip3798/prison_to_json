@@ -31,7 +31,7 @@ jobs:
    - name: Run tests
      run: cargo test --verbose
    - name: Echo folders
-     run: dir
+     run: tree
    - uses: actions/upload-artifact@v2
      with:
       name: WindowsBuild
